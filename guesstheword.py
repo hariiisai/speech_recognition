@@ -25,6 +25,7 @@ def recognize_speech_from_mic(recognizer, microphone):
 
     # adjust the recognizer sensitivity to ambient noise and record audio
     # from the microphone
+    #Added timeout and phrase_time_limit to speed up the game in listen method
     with microphone as source:
         recognizer.adjust_for_ambient_noise(source)
         audio = recognizer.listen(source,  timeout=1, phrase_time_limit=2)
